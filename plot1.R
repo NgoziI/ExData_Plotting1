@@ -4,6 +4,8 @@
 #idata <- read.table("household_power_consumption.txt",sep = ";")[read.csv(fileUrl,header = TRUE,sep = ";")[[1]] == "1/2/2007" | read.csv(fileUrl,sep = ";")[[1]] == "2/2/2007",]
 ##-NOTE - The line of code above only need to be executed if no other plot script has been run previously
 
+fileUrl <-"household_power_consumption.txt"
+
 #Read the data from the text file and set the col names
 idata <- read.table(fileUrl,sep = ";",colClasses = c("character","character","numeric","numeric","numeric","numeric","numeric","numeric","numeric"),skip = 66637,nrows = 2880)
 colnames(idata) = c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
